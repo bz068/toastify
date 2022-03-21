@@ -1,0 +1,111 @@
+ion-icon {
+    color: black;
+    font-size: 1.8rem;
+    margin-top: 10px;
+  }
+
+  .toast-container{
+    position: absolute;
+    top: 20px;
+    right: 10px;
+    width: 100%;
+    max-width: 450px;
+  }
+  
+  .toast {
+    border: 1px solid;
+    width: 100%;
+    max-width: 450px;
+    border-radius: 6px;
+    cursor: pointer;
+    overflow: hidden;
+    margin-bottom: 10px;
+    /* transition: transform 200ms linear; */
+    animation: bounce 400ms alternate;
+
+  }
+
+  .toast.show{
+    transform: translateX(0);
+
+  }
+  
+  .grid {
+    display: grid;
+    grid-template-columns: min-content 2fr min-content;
+    /* align-items: center; */
+    text-align: start;
+    padding: 1rem;
+    position: relative;
+    overflow: hidden;
+
+  }
+  
+  .grid p {
+    margin-left: 1rem;
+  }
+  
+  .closeBtn {
+    color: rgb(212, 28, 28);
+  }
+  
+  .progress {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    right: 0px;
+    height: 2px;
+    background-color: white;
+  }
+  .progress::before {
+    content: '';
+    position: absolute;
+    width: var(--progress);
+    bottom: 0;
+    left: 0;
+    right: 0px;
+    height: 3px;
+    background-color: red;
+  }
+
+  .grid.warn .infoIcon{
+    color: #F2C40E;
+  }
+  .grid.warn .progress::before {
+    background-color: #F2C40E;
+  }
+  .grid.error .infoIcon{
+    color: #E84B3B;
+  }
+  .grid.error .progress::before {
+    background-color: #E84B3B;
+  }
+  .grid.info .infoIcon{
+    color: #3598DA;
+  }
+  .grid.info .progress::before {
+    background-color: #3598DA;
+  }
+  .grid.success .infoIcon{
+    color: #05BC0B;
+  }
+  .grid.success .progress::before {
+    background-color: #05BC0B;
+  }
+
+  @keyframes bounce {
+    from {
+      transform: translateX(120%);
+    }
+    to {
+      transform: translateX(-5px);
+    }
+  }
+
+  .toast.dark {
+    background-color: #000;
+  }
+  .toast.dark p {
+    color: #fff;
+  }
